@@ -1,4 +1,5 @@
 ﻿
+
 namespace tdd_domain_modelling.CSharp.Main
 {
     public class Basket
@@ -11,6 +12,17 @@ namespace tdd_domain_modelling.CSharp.Main
             if (basket.ContainsKey(product)) return false;
             _basket.Add(product, price);
             return true;
+        }
+
+        public int Total()
+        {
+            int count = 0;
+            foreach (var item in _basket)
+            {
+                count += item.Value;
+            }
+
+            return count;
         }
     }
 }
